@@ -1,21 +1,41 @@
 {
   "name": "ndsa-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": false,
+  "homepage": "https://vu-devs.github.io/ndsa-website",
+  "dependencies": {
+    "gh-pages": "^6.3.0",
+    "react": "^18.0.0",
+    "react-calendar": "^5.1.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^5.0.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/marcosspanos/ndsa-website.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/marcosspanos/ndsa-website/issues"
-  },
-  "homepage": "https://github.com/marcosspanos/ndsa-website#readme"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
