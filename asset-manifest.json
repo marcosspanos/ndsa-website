@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ndsa-website/static/css/main.6e787f8a.css",
+    "main.js": "/ndsa-website/static/js/main.5aee5866.js",
+    "index.html": "/ndsa-website/index.html",
+    "main.6e787f8a.css.map": "/ndsa-website/static/css/main.6e787f8a.css.map",
+    "main.5aee5866.js.map": "/ndsa-website/static/js/main.5aee5866.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e787f8a.css",
+    "static/js/main.5aee5866.js"
+  ]
+}
