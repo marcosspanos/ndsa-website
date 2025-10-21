@@ -1,0 +1,940 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #87CEEB 0%, #9370DB 100%);
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    color: #9370DB;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #87CEEB, #9370DB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+nav a:hover, nav a.active {
+    background: linear-gradient(45deg, #87CEEB, #9370DB);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: #9370DB;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Calendar section */
+.calendar-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-section h2 {
+    text-align: center;
+    color: #9370DB;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.calendar-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Calendar header */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.calendar-header button {
+    background: linear-gradient(45deg, #87CEEB, #9370DB);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.calendar-header button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-header button:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+}
+
+.calendar-header h3 {
+    font-size: 1.5rem;
+    color: #9370DB;
+}
+
+/* Calendar grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.day-header {
+    background: linear-gradient(45deg, #87CEEB, #9370DB);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.day {
+    background: white;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.day:hover {
+    background: #f0f0f0;
+}
+
+.day.current-month {
+    color: #333;
+}
+
+.day:not(.current-month) {
+    color: #ccc;
+}
+
+.day.today {
+    background: linear-gradient(45deg, #87CEEB, #9370DB);
+    color: white;
+    font-weight: bold;
+}
+
+.day.event {
+    background: #e8f5e8;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.day.event::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #4caf50;
+    border-radius: 50%;
+}
+
+/* Upcoming events */
+.upcoming-events {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.upcoming-events h2 {
+    text-align: center;
+    color: #9370DB;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.event-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.event-date {
+    background: linear-gradient(45deg, #87CEEB, #9370DB);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-width: 80px;
+    margin-right: 1.5rem;
+}
+
+.event-details h3 {
+    color: #9370DB;
+    margin-bottom: 0.5rem;
+}
+
+.event-details p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.event-tags {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.tag.student-housing {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a6f);
+    color: white;
+}
+
+.tag.social {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    color: white;
+}
+
+.tag.support {
+    background: linear-gradient(45deg, #a8edea, #fed6e3);
+    color: #333;
+}
+
+.tag.educational {
+    background: linear-gradient(45deg, #87CEEB, #9370DB);
+    color: white;
+}
+
+.tag.creative {
+    background: linear-gradient(45deg, #ffecd2, #fcb69f);
+    color: #333;
+}
+
+.tag.general {
+    background: linear-gradient(45deg, #d299c2, #fef9d7);
+    color: #333;
+}
+
+.event-time {
+    color: #4caf50;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Event Filtering Styles */
+.event-filters {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.event-filters h3 {
+    color: #9370DB;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #87CEEB;
+    background: transparent;
+    color: #87CEEB;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+    background: #87CEEB;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: linear-gradient(45deg, #87CEEB, #9370DB);
+    color: white;
+    border-color: transparent;
+}
+
+.filter-btn.active:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(135, 206, 235, 0.4);
+}
+
+/* Tab System */
+.tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Home Tab Content */
+.home-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.intro-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.intro-card:hover {
+    transform: translateY(-5px);
+}
+
+.intro-card h3 {
+    color: #9370DB;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.intro-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.clickable-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.clickable-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(135, 206, 235, 0.2);
+}
+
+.clickable-card:hover .card-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card-link {
+    display: block;
+    margin-top: 1rem;
+    color: #87CEEB;
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+/* About Tab Content */
+.about-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h2 {
+    text-align: center;
+    color: #9370DB;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.about-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.about-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h3 {
+    color: #9370DB;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.about-section p, .about-section ul {
+    color: #666;
+    line-height: 1.6;
+}
+
+.about-section ul {
+    padding-left: 1.5rem;
+}
+
+.about-section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Tab Content */
+.contact-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-content h2 {
+    text-align: center;
+    color: #9370DB;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-info, .contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3, .contact-form h3 {
+    color: #9370DB;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.contact-item {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.contact-item strong {
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #9370DB;
+}
+
+.contact-form button {
+    background: linear-gradient(45deg, #87CEEB, #9370DB);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Newsletter Styles */
+.newsletter-signup {
+    background: linear-gradient(135deg, #87CEEB, #9370DB);
+    color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.newsletter-signup h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.newsletter-signup p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter-input-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-input-group input {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.newsletter-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background: white;
+    color: #9370DB;
+}
+
+.newsletter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 4px;
+    margin-right: 0.75rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: white;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    color: #9370DB;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.newsletter-privacy {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Home Newsletter Section */
+.home-newsletter {
+    margin-top: 3rem;
+}
+
+.newsletter-cta {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-cta h3 {
+    color: #9370DB;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.newsletter-cta p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.quick-newsletter-form {
+    margin-bottom: 1rem;
+}
+
+.quick-newsletter-input {
+    display: flex;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 0.5rem;
+}
+
+.quick-newsletter-input input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.quick-newsletter-input input:focus {
+    outline: none;
+    border-color: #9370DB;
+}
+
+.quick-newsletter-input button {
+    background: linear-gradient(45deg, #87CEEB, #9370DB);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quick-newsletter-input button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(135, 206, 235, 0.4);
+}
+
+.newsletter-note {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Form Select Styles */
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #9370DB;
+}
+
+/* Contact Form Checkbox */
+.contact-form .checkbox-label {
+    color: #333;
+}
+
+.contact-form .checkmark {
+    background: #f8f9fa;
+    border: 2px solid #ddd;
+}
+
+.contact-form .checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: #9370DB;
+    border-color: #9370DB;
+}
+
+.contact-form .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    color: white;
+}
+
+/* Drive Tab Content */
+.drive-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.drive-content h2 {
+    color: #9370DB;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.drive-content p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.drive-link {
+    display: inline-block;
+    background: linear-gradient(45deg, #87CEEB, #9370DB);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
+}
+
+.drive-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #6BB6FF, #8A2BE2);
+}
+
+.drive-link:active {
+    transform: translateY(-1px);
+}
+
+/* Add icon to drive link */
+.drive-link::before {
+    content: '📁';
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .calendar-grid {
+        font-size: 0.9rem;
+    }
+    
+    .day {
+        padding: 0.8rem;
+    }
+    
+    .event-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .event-date {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    .intro-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-buttons {
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .newsletter-input-group {
+        flex-direction: column;
+    }
+    
+    .quick-newsletter-input {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    
+    .newsletter-cta {
+        padding: 1.5rem;
+    }
+    
+    .newsletter-cta h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-grid {
+        font-size: 0.8rem;
+    }
+    
+    .day {
+        padding: 0.5rem;
+    }
+    
+    .day-header {
+        padding: 0.5rem;
+    }
+}
