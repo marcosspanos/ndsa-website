@@ -2,7 +2,7 @@
   "name": "ndsa-website",
   "version": "1.0.0",
   "private": false,
-  "homepage": "https://vu-devs.github.io/ndsa-website",
+  "homepage": ".",
   "dependencies": {
     "gh-pages": "^6.3.0",
     "react": "^18.0.0",
