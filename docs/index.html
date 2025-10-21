@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDSA Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>NDSA Group Events</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#drive">Drive</a></li>
+                <li><a href="#announcements">Announcements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="tab-content active">
+            <section class="hero">
+                <h2>Welcome to Our Community</h2>
+                <p>Stay connected with upcoming events and activities.</p>
+            </section>
+
+            <section class="home-content">
+                <div class="intro-grid">
+                    <div class="intro-card">
+                        <h3> Our Goal</h3>
+                        <p>Creating a safe, inclusive space for neurodivergent individuals where they can join and also host events.</p>
+                    </div>
+                    <div class="intro-card">
+                        <h3>🤝 Community</h3>
+                        <p>Join regular meetups, support groups, and social events.</p>
+                    </div>
+                    <div class="intro-card clickable-card" onclick="switchTab('events')">
+                        <h3>📅 Events</h3>
+                        <p>From movie nights and game nights to workshops of various themes and many more.</p>
+                        <span class="card-link">View Events →</span>
+                    </div>
+                </div>
+
+                <section class="home-newsletter">
+                    <div class="newsletter-cta">
+                        <h3>🔔 Never Miss an Event!</h3>
+                        <p>Subscribe to our mailing list and be the first to know about upcoming events, workshops, and community gatherings.</p>
+                        <form class="quick-newsletter-form">
+                            <div class="quick-newsletter-input">
+                                <input type="email" placeholder="Enter your email" required>
+                                <button type="submit">Join Mailing List</button>
+                            </div>
+                        </form>
+                        <p class="newsletter-note">✨ Get weekly event updates • Unsubscribe anytime</p>
+                    </div>
+                </section>
+            </section>
+        </section>
+
+        <section id="events" class="tab-content">
+            <section class="calendar-section">
+                <h2>Event Calendar</h2>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prevMonth">&lt;</button>
+                        <h3 id="currentMonth">July 2025</h3>
+                        <button id="nextMonth">&gt;</button>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="day-header">Sun</div>
+                        <div class="day-header">Mon</div>
+                        <div class="day-header">Tue</div>
+                        <div class="day-header">Wed</div>
+                        <div class="day-header">Thu</div>
+                        <div class="day-header">Fri</div>
+                        <div class="day-header">Sat</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="upcoming-events">
+                <h2>Upcoming Events</h2>
+                <div class="event-list">
+                    <!-- Events will be added here -->
+                </div>
+            </section>
+        </section>
+        <section id="announcements" class="tab-content">
+            <section class="announcement-content">
+                <h2>All events from all groups will be announced here</h2>
+                <p>Some past events we had include barbeques, movie nights, game nights, going out and much more</p>
+                <p>If you have any other events you would like to recommend please reach out through the contact form</p>
+                <p>Need to have a contact form here somehow</p>
+            </section>
+        </section>
+
+        <section id="about" class="tab-content">
+            <section class="about-content">
+                <h2>About Our Group</h2>
+                <div class="about-grid">
+                    <div class="about-section">
+                        <h3>Our Story</h3>
+                        <p>Founded in 2024 we are a student run organisation. We are </p>
+                    </div>
+                    <div class="about-section">
+                        <h3>What We Do</h3>
+                        <ul>
+                            <li>Support group sessions</li>
+                            <li>Educational workshops</li>
+                            <li>Social events </li>
+                        </ul>
+                    </div>
+                    <div class="about-section">
+                        <h3>Safe Space Policy</h3>
+                        <p>We are committed to maintaining a safe, respectful environment for all members. Discrimination, harassment, or hate speech of any kind will not be tolerated.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="contact" class="tab-content">
+            <section class="contact-content">
+                <h2>Get In Touch</h2>
+                
+                <section class="newsletter-signup">
+                    <h3>📬 Join Our Mailing List</h3>
+                    <p>Stay updated with the latest events, announcements, and community news!</p>
+                    <form class="newsletter-form">
+                        <div class="newsletter-input-group">
+                            <input type="email" id="newsletter-email" name="newsletter-email" placeholder="Your email address" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </div>
+                        <div class="newsletter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="events" checked>
+                                <span class="checkmark"></span>
+                                Event announcements
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="general">
+                                <span class="checkmark"></span>
+                                General community news
+                            </label>
+                        </div>
+                        <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+                    </form>
+                </section>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <strong>Email:</strong> placeholder
+                        </div>
+                        <div class="contact-item">
+                            <strong>Phone:</strong> placeholder
+                        </div>
+                        <div class="contact-item">
+                            <strong>Address:</strong> placeholder
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us a message</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject:</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="event-suggestion">Event Suggestion</option>
+                                    <option value="student-housing">Student Housing Help</option>
+                                    <option value="join-group">Join Our Group</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="add-to-mailing-list">
+                                    <span class="checkmark"></span>
+                                    Add me to the mailing list for event updates
+                                </label>
+                            </div>
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section id="drive" class="tab-content">
+            <section class="drive-content">
+                <h2>Member Resources</h2>
+                <p>Access our secure ProtonDrive for member-exclusive resources, documents, and event photos.</p>
+                <p>This is where we keep all of our photos and videos of past events, meeting notes, and community resources.</p>
+                <p><strong>Work in progress</strong></p>
+                
+                <div class="drive-access-info">
+                    <h3>🔒 Secure Access Required</h3>
+                    <p>Our files are stored on ProtonDrive for maximum privacy and security. To access:</p>
+                    <ol>
+                        <li>Contact us for the ProtonDrive access credentials</li>
+                        <li>Log in to your ProtonMail account</li>
+                        <li>Access the shared drive folder</li>
+                    </ol>
+                </div>
+                
+                <div class="drive-buttons">
+                    <a href="https://drive.proton.me/u/6/0gEW_LUzeK9jV_GaLgZsU9AMQKqWRvXiQxuHgtdPqCu1MUK5ShfMdrMPGyR3_uDnZdceDjVhs5lBCgIn2Rfn0Q==/folder/w2syAm-rhODgyqFEchilf9MBG2nHBl-QrNWvv4tevhETJaGMUpyBLwgy2I66PnAzqo406TvGbhcWVY07Z4rwfA==?r=/0gEW_LUzeK9jV_GaLgZsU9AMQKqWRvXiQxuHgtdPqCu1MUK5ShfMdrMPGyR3_uDnZdceDjVhs5lBCgIn2Rfn0Q==/folder/b-vV0-msjowSXxXGMFA2vLwW8NVVECtI0yOdcy3q6Y-G7On0jhvzXqMmYkynK2ylrSnCalHXx2MdmCO4j_ToLQ==" target="_blank" class="drive-link">Open ProtonDrive</a>
+                    <a href="#contact" class="drive-link secondary" onclick="switchTab('contact')">Request Access</a>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 NDSA. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
